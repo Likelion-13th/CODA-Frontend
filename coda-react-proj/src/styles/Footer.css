@@ -32,13 +32,12 @@
     font-size:1.2rem;
     font-family: 'KaiseiDecol-Regular';
 }
-.footer-subtitle{
+.footer-subtitle,.info-txt-wrapper{
     font-family: 'NanumMyeongjo-Regular';
 }
 .info-txt-wrapper{
     display: flex;
     gap:16px;
-    font-family: 'NanumMyeongjo-Regular';
 }
 
 .line-1{
