@@ -1,0 +1,74 @@
+@font-face{
+    font-family: 'KaiseiDecol-Regular';
+    src: url("../../public/font/KaiseiDecol-Regular.ttf") format("truetype")
+}
+@font-face {
+    font-family: 'NanumMyeongjo-Regular';
+    src: url("../../public/font/NanumMyeongjo-Regular.ttf") format("truetype");
+}
+.heder-box{  
+    padding: 1.5rem 3.5rem;
+    background-color: rgba(255,255,255,0.5);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    font-family: 'KaiseiDecol-Regular';
+    box-sizing: border-box;
+}
+.Home{
+    box-sizing: border-box;
+}
+.Home a{
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #FFFFFF;
+    
+}
+.right-menu{
+    display: flex;
+    gap:2rem;
+    box-sizing: border-box;
+}
+.right-menu a{
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color :#FFFFFF;
+}
+
+
+.active{
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color:#3a3a3a !important;
+}
+.MP-hederBox{
+    padding: 1.5rem 3.5rem;
+    background-color: #E7EFF5;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position:fixed;
+    font-family: 'KaiseiDecol-Regular';
+    box-sizing: border-box;
+}
+.MP-Home a{
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #3a3a3a;
+}
+.MP-rmenu{
+    display: flex;
+    gap:2rem;
+    box-sizing: border-box;
+}
+.MP-rmenu a{
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #B8BAC6;
+}
