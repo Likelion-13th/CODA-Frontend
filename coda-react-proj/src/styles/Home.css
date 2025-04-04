@@ -1,4 +1,60 @@
-.home-continer{
-    padding: 50px;
-    background-color: blueviolet;
+@font-face{
+    font-family: 'KaiseiDecol-Regular';
+    src: url("../../public/font/KaiseiDecol-Regular.ttf") format("truetype")
+}
+@font-face {
+    font-family: 'NanumMyeongjo-Regular';
+    src: url("../../public/font/NanumMyeongjo-Regular.ttf") format("truetype");
+}
+/*Home*/
+.home-container{
+    width:100%;
+}
+
+
+
+/*Menu*/
+.menu-container{
+    width:100%;
+    font-family: 'KaiseiDecol-Regular';
+    display: flex;
+}
+.menu-section{
+    display: flex;
+    width:50%;
+    position: relative;
+    
+}
+.menu-img{
+    width:100%;
+}
+.txt-box
+{
+    top: 16px;
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    border: 2px solid white;
+    position: absolute;
+}
+.txt-box::before{
+    position: absolute;
+    color:white;
+    font-size: 32px;
+}
+.diffuser::before{
+    content: "Diffuser";
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+}
+.perfume::before{
+    content: "Perfume";
+    bottom: 32px;
+    left:32px;
+}
+
+/*banner*/
+.banner-container{
+    width: 100%;
 }

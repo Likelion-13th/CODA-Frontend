@@ -15,6 +15,7 @@
     position: fixed;
     font-family: 'KaiseiDecol-Regular';
     box-sizing: border-box;
+    z-index: 1;
 }
 .Home{
     box-sizing: border-box;
@@ -54,6 +55,7 @@
     position:fixed;
     font-family: 'KaiseiDecol-Regular';
     box-sizing: border-box;
+    z-index: 1;
 }
 .MP-Home a{
     font-weight: bold;
