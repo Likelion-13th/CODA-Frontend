@@ -8,11 +8,13 @@ import Diffuser from "./pages/ProductPage/Diffuser";
 import Perfume from "./pages/ProductPage/Perfume";
 import Footer from "./components/Footer";
 import New from "./pages/New/New";
+import ToolBar from "./components/ToolBar";
 
 function App() {
   return (
     <Router>
       <Header />
+      <ToolBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />

@@ -5,23 +5,25 @@ import {Link} from 'react-router-dom';
 const Menu = () => {
     return(
         <div className='menu-container'>
-            <Link to='/perfume' className='menu-section menu-perfume'>
+            <Link to='/perfume' className='menu-section'>
                 <img 
                     src={`${process.env.PUBLIC_URL}/img/banner_perfume.jpg`}
                     alt="perfume"
                     className='menu-img'
                 ></img>
-                <div className='txt-box perfume'>
+                <div className='menu-txt menu-perfume'>
+                    Perfume
                 </div>
             </Link>
 
-            <Link to ='/diffuser' className='menu-section menu-diffuser'>
+            <Link to ='/diffuser' className='menu-section'>
                 <img
                     src={`${process.env.PUBLIC_URL}/img/banner_diffuser.jpg`}
                     alt="diffuser"
                     className='menu-img'
                 ></img>
-                <div className='txt-box diffuser'>
+                <div className='menu-txt menu-diffuser'>
+                    Diffuser
                 </div>
             </Link>
         </div>
