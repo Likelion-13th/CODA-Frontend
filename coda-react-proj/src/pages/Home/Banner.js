@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css"
 import "../../styles/Banner_custom.css"
 
 
-const Custom_Arrow = ({onClick, direction})=>{
+const CustomArrow = ({onClick, direction})=>{
     const isPrev = direction ==="prev";
     const arrowStyle={
         width: "fit-content",
@@ -46,8 +46,8 @@ const Banner = () => {
         autoplay:true,
         autoplaySpeed: 3000,
         arrows: true,
-        prevArrow: <Custom_Arrow direction="prev" />,
-        nextArrow: <Custom_Arrow direction="next" />,
+        prevArrow: <CustomArrow direction="prev" />,
+        nextArrow: <CustomArrow direction="next" />,
     };
     const images=[
         `${process.env.PUBLIC_URL}/img/banner_background_1.jpg`,
