@@ -27,7 +27,23 @@ const History = () =>{
                 <tbody>
                     <tr>
                         <td>2025-01-01</td>
-                        <td>엑스 베티버 오드 퍼퓸</td>
+                        <td>
+                            <div className="history-info-container">
+                                <img 
+                                    src={`${process.env.PUBLIC_URL}/img/perfume_1.png`}
+                                    alt="perfume_1"
+                                    className='history-info-img'
+                                ></img>
+                                <div className="history-info-txtbox">
+                                    <div className="history-info-maintxt">
+                                        엠버 술탄 오드 퍼퓸
+                                    </div>
+                                    <div className="history-info-subtxt">
+                                        세르주르텐
+                                    </div>
+                                </div>
+                            </div>    
+                        </td>
                         <td>1</td>
                         <td>135,000원</td>
                         <td>배송중</td>
