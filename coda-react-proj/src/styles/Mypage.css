@@ -35,7 +35,6 @@
     display: flex;
     align-items: center;
     font-size: 2rem;
-    
 }
 .profile-realname{
     font-weight: 600;
@@ -44,6 +43,8 @@
     display: flex;
     align-items: center;
     height: 40px;
+    font-weight: 600;
+    
 }
 /*address style*/
 .address-container-wrap{
@@ -198,7 +199,8 @@
 .status-teg{
     display: flex;
     align-items: center;
-    height:20px
+    height:20px;
+    font-weight: 600;
 }
 .status-value{
     display: flex;
