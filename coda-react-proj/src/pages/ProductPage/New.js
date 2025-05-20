@@ -3,8 +3,7 @@ import Banner from './Banner'
 import ProductCard from "./ProductCard"
 import PayModal from '../../components/PayModal';
 import "../../styles/ProductPage.css"
-
-const Perfume = () => {
+const New = () => {
     const products=[
         {
             id:1,
@@ -16,11 +15,11 @@ const Perfume = () => {
         },
         {
             id:2,
-            name:"퍼퓸",
+            name:"디퓨저",
             brand:"브랜드",
             price:30000,
-            imagePath:"/img/perfume_2.png",
-            isNew:false,
+            imagePath:"/img/diffuser_2.png",
+            isNew:true,
         },
         {
             id:3,
@@ -28,7 +27,7 @@ const Perfume = () => {
             brand:"브랜드",
             price:30000,
             imagePath:"/img/perfume_3.png",
-            isNew:false,
+            isNew:true,
         },
         {
             id:4,
@@ -44,93 +43,13 @@ const Perfume = () => {
             brand:"브랜드",
             price:30000,
             imagePath:"/img/perfume_5.png",
-            isNew:false,
+            isNew:true,
         },
-        {
-            id:6,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_6.png",
-            isNew:false,
-        },
-        {
-            id:7,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_7.png",
-            isNew:false,
-        },
-        {
-            id:8,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_8.png",
-            isNew:false,
-        },
-        {
-            id:9,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_9.png",
-            isNew:false,
-        },
-        {
-            id:10,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_10.png",
-            isNew:false,
-        },
-        {
-            id:11,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_11.png",
-            isNew:false,
-        },
-        {
-            id:12,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_12.png",
-            isNew:false,
-        },
-        {
-            id:13,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_13.png",
-            isNew:false,
-        },
-        {
-            id:14,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_14.png",
-            isNew:false,
-        },
-        {
-            id:15,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_15.png",
-            isNew:false,
-        },
-
+        
 
     ];
     const [currentPage,setCurrentPage]=useState(1);
-    const itemsPerPage=15;
+    const itemsPerPage=5;
     const totalPages=Math.ceil(products.length/itemsPerPage);
     const startIndex=(currentPage-1)*itemsPerPage;
     const endIndex=startIndex+itemsPerPage;
@@ -153,7 +72,7 @@ const Perfume = () => {
     
     return(
         <div>
-            <Banner title="Perfume" imagePath={"/banner_perfume.jpg"}/>
+            <Banner title="New" imagePath={"/banner_new.jpg"}/>
             <div className='product-container'>
                 <div className='product-grid' >
                     {currentProducts.map((products)=>(
@@ -167,8 +86,8 @@ const Perfume = () => {
                 </div>
                 <div className="paging">
                     {currentPage > 1 && (
-                        <button 
-                            className='page-arrow'
+                        <button
+                            className='page-arrow' 
                             onClick={()=>handlePageChange(currentPage-1)}
                         >
                             Prev
@@ -201,4 +120,4 @@ const Perfume = () => {
         </div>
     );
 }
-export default Perfume;
+export default New;

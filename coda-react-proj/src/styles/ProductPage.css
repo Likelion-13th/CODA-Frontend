@@ -1,0 +1,137 @@
+/*font*/
+@font-face{
+    font-family: 'KaiseiDecol-Regular';
+    src: url("../../public/font/KaiseiDecol-Regular.ttf") format("truetype")
+}
+@font-face {
+    font-family: 'NanumMyeongjo-Regular';
+    src: url("../../public/font/NanumMyeongjo-Regular.ttf") format("truetype");
+}
+/*Product banner*/
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.banner-title{
+    font-family: "KaiseiDecol-Regular";
+    font-size:6rem;
+    color:#ffffff;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.banner-image{
+    width: 100%;
+    height: 100%;
+    object-fit: block;
+    display: block;
+}
+/*Product Card*/
+
+.product-card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.product-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.product-name{
+    font-family: "NanumMyeongjo-Regular";
+    font-size: 18px;
+    font-weight: 600;
+    margin-top:16px;
+    color:#3a3a3a;
+}
+.product-brand{
+    font-family: "NanumMyeongjo-Regular";
+    font-size: 12px;
+    font-weight: 600;
+    margin-top:8px;
+    color:#898989;
+}
+.product-price{
+    font-family: "NanumMyeongjo-Regular";
+    font-size: 16px;
+    font-weight: 600;
+    margin-top:8px;
+    color:#3a3a3a;
+}
+.new-badge{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    background-color: #2ec1ac;
+    color:#ffffff;
+    font-size: 0.8rem;
+    font-family: "KaiseiDecol-Regular";
+    padding: 10px 5px 10px 5px;
+    border-radius: 50px;
+    text-align: center;
+
+}
+.product-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    padding: 80px;
+    box-sizing: border-box;
+    
+}
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap:84px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/*paging*/
+.paging{
+    display: flex;
+    margin-top: 100px;
+    
+    justify-content: center;
+    gap:10px;
+    
+    
+}
+.page-arrow{
+    width: 50px;
+    height: 40px;
+    border-radius: 8px;
+    font-family:"NanumMyeongjo-Regular" ;
+    background-color: #B8BAC6;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+.page-now{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #898989;
+    font-family:"NanumMyeongjo-Regular" ;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+.page-not{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #B8BAC6;
+    font-family:"NanumMyeongjo-Regular" ;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}

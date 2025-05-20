@@ -7,7 +7,7 @@ import Mypage from "./pages/Mypage/Mypage";
 import Diffuser from "./pages/ProductPage/Diffuser";
 import Perfume from "./pages/ProductPage/Perfume";
 import Footer from "./components/Footer";
-import New from "./pages/New/New";
+import New from "./pages/ProductPage/New";
 import ToolBar from "./components/ToolBar";
 
 function App() {
