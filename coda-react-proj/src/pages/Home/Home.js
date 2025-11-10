@@ -8,7 +8,8 @@ import "../../styles/Home.css"
 
 const Home = ({onLoginChange}) => {
     const navigate=useNavigate();
-    const[setCookie] =useCookies(["accessToken"]);
+    // eslint-disable-next-line
+    const[cookies,setCookie] =useCookies(["accessToken"]);
     useEffect(()=>{
         const params=new URLSearchParams(window.location.search);
         const accessToken=params.get("accessToken");
