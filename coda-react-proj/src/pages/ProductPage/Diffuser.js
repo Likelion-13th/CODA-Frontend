@@ -3,7 +3,6 @@ import Banner from './Banner'
 import ProductCard from "./ProductCard"
 import PayModal from '../../components/PayModal';
 import "../../styles/ProductPage.css"
-import { useCookies } from 'react-cookie';
 import axios from 'axios';
 
 const Diffuser = ({isLogin}) => {

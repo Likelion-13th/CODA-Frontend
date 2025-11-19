@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard"
 import PayModal from '../../components/PayModal';
 import "../../styles/ProductPage.css"
 import axios from 'axios'
-import { useCookies } from 'react-cookie';
+
 
 
 
@@ -12,7 +12,6 @@ import { useCookies } from 'react-cookie';
 const Perfume = ({isLogin}) => {
     const [products,setProducts]=useState([]);
     
-    const [cookies]=useCookies("accessToken")
     useEffect(()=>{
         axios.get("/categories/2/items",{
             headers:{

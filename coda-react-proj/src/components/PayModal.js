@@ -20,7 +20,7 @@ const PayModal=({product, onClose})=>{
         .catch((err)=>{
             console.log("아이템 카테고리 요청 실패",err);
         });
-        },[]);
+        },[cookies.accessToken]);
     //주문할 상품 갯수(defalt 1)
     const [quantity,setQuantity]=useState(1);
     //사용자가 입력한 마일리지 금액
