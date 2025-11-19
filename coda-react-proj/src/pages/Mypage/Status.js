@@ -1,6 +1,10 @@
 import React from "react";
 
-const Status = () =>{
+const Status = ({orderStatusData}) =>{
+    const formatCurrency=(amount)=>{
+        return new Intl.NumberFormat('ko-KR').format(amount);
+    }
+    
     return (
     <div className="status-wrap">
         <div className="status-title">
@@ -9,26 +13,18 @@ const Status = () =>{
         <div className="status-container">
             <div className="status-box">
                 <div className="status-teg">
-                    입금완료
-                </div>
-                <div className="status-value">
-                    1
-                </div>
-            </div>
-            <div className="status-box">
-                <div className="status-teg">
                     배송중
                 </div>
                 <div className="status-value">
-                    10
+                    <span>{formatCurrency(orderStatusData?.PROCESSING)}</span>
                 </div>
             </div>
             <div className="status-box">
                 <div className="status-teg">
-                    배송완료
+                    배송완료s
                 </div>
                 <div className="status-value">
-                    100
+                    <span>{formatCurrency(orderStatusData?.COMPLETE)}</span>
                 </div>
             </div>
             <div className="status-box">
@@ -36,7 +32,7 @@ const Status = () =>{
                     주문취소
                 </div>
                 <div className="status-value">
-                    0
+                    <span>{formatCurrency(orderStatusData?.CANCEL)}</span>
                 </div>
             </div>
         </div>

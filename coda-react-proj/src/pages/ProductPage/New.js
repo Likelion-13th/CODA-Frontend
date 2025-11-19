@@ -1,53 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import Banner from './Banner'
 import ProductCard from "./ProductCard"
 import PayModal from '../../components/PayModal';
 import "../../styles/ProductPage.css"
-const New = () => {
-    const products=[
-        {
-            id:1,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_1.png",
-            isNew:true,
-        },
-        {
-            id:2,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:10000,
-            imagePath:"/img/diffuser_2.png",
-            isNew:true,
-        },
-        {
-            id:3,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:20000,
-            imagePath:"/img/perfume_3.png",
-            isNew:true,
-        },
-        {
-            id:4,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_4.png",
-            isNew:true,
-        },
-        {
-            id:5,
-            name:"퍼퓸",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/perfume_5.png",
-            isNew:true,
-        },
-        
+import axios from "axios"
 
-    ];
+const New = ({isLogin}) => {
+    const [products,setProducts]=useState([]);
+    useEffect(()=>{
+            axios.get("/categories/3/items",{
+                headers:{
+                    accept:"*/*"
+                }
+            })
+            .then((response)=>{
+                setProducts(response.data.result);
+    
+            })
+            .catch((err)=>{
+                console.log("아이템 카테고리 요청 실패",err);
+            });
+            },[]);
+
     const [currentPage,setCurrentPage]=useState(1);
     const itemsPerPage=5;
     const totalPages=Math.ceil(products.length/itemsPerPage);
@@ -63,6 +37,10 @@ const New = () => {
     const [isModalOpen,setIsModalOpen]=useState(false);
     const handleCardClick=(product)=>{
         setSelectedProduct(product);
+        if(!isLogin){
+            alert("로그인이 필요합니다.")
+            return
+        }
         setIsModalOpen(true);
     };
     const handleCloseModal = () => {

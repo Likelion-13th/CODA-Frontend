@@ -4,7 +4,7 @@ import "../../styles/ProductPage.css"
 const ProductCard=({product, onClick})=>{
     return(
         <div className='product-card' onClick={onClick}>
-            {product.isNew&& <div className='new-badge'>New</div>}
+            {product.new&& <div className='new-badge'>New</div>}
             <img
                 src={product.imagePath}
                 alt={product.name}

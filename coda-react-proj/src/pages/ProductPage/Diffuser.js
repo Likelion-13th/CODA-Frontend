@@ -1,134 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from './Banner'
 import ProductCard from "./ProductCard"
 import PayModal from '../../components/PayModal';
 import "../../styles/ProductPage.css"
+import { useCookies } from 'react-cookie';
+import axios from 'axios';
 
-const Diffuser = () => {
-    const products=[
-        {
-            id:1,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_1.png",
-            isNew:true,
-        },
-        {
-            id:2,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:10000,
-            imagePath:"/img/diffuser_2.png",
-            isNew:false,
-        },
-        {
-            id:3,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:20000,
-            imagePath:"/img/diffuser_3.png",
-            isNew:false,
-        },
-        {
-            id:4,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:10000,
-            imagePath:"/img/diffuser_4.png",
-            isNew:true,
-        },
-        {
-            id:5,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_5.png",
-            isNew:false,
-        },
-        {
-            id:6,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_6.png",
-            isNew:false,
-        },
-        {
-            id:7,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_7.png",
-            isNew:false,
-        },
-        {
-            id:8,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_8.png",
-            isNew:false,
-        },
-        {
-            id:9,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_9.png",
-            isNew:false,
-        },
-        {
-            id:10,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_10.png",
-            isNew:false,
-        },
-        {
-            id:11,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_11.png",
-            isNew:false,
-        },
-        {
-            id:12,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_12.png",
-            isNew:false,
-        },
-        {
-            id:13,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_13.png",
-            isNew:false,
-        },
-        {
-            id:14,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_14.png",
-            isNew:false,
-        },
-        {
-            id:15,
-            name:"디퓨저",
-            brand:"브랜드",
-            price:30000,
-            imagePath:"/img/diffuser_15.png",
-            isNew:false,
-        },
-        
+const Diffuser = ({isLogin}) => {
+    useEffect(()=>{
+        axios.get("/categories/1/items",{
+            headers:{
+                accept:"*/*"
+            }
+        })
+        .then((response)=>{
+            setProducts(response.data.result);
 
-    ];
+        })
+        .catch((err)=>{
+            console.log("아이템 카테고리 요청 실패",err);
+        });
+        },[]);
+    const [products,setProducts]=useState([])
     const [currentPage,setCurrentPage]=useState(1);
     const itemsPerPage=5;
     const totalPages=Math.ceil(products.length/itemsPerPage);
@@ -136,7 +29,7 @@ const Diffuser = () => {
     const endIndex=startIndex+itemsPerPage;
     const currentProducts=products.slice(startIndex,endIndex);
     const [selectedProduct, setSelectedProduct]=useState(null);
-
+    
     const handlePageChange=(pageNumber)=>{
         setCurrentPage(pageNumber);
     };
@@ -144,10 +37,16 @@ const Diffuser = () => {
     const [isModalOpen,setIsModalOpen]=useState(false);
     const handleCardClick=(product)=>{
         setSelectedProduct(product);
+        if(!isLogin){
+            alert("로그인이 필요합니다");
+            return;
+        }
         setIsModalOpen(true);
+        
     };
     const handleCloseModal = () => {
         setSelectedProduct(null);
+    
         setIsModalOpen(false);
     };
     

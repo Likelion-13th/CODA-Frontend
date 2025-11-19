@@ -1,10 +1,9 @@
 import React from "react";
 
-const History = () =>{
-    const onCancel=()=>{
-        //API호출
-        alert("canceled");
-    }
+const History = ({historyData,onCancel}) =>{
+    const formatCurrency=(amount)=>{
+        return new Intl.NumberFormat('ko-KR').format(amount);
+    };
     return (
     <div className="history-container-wrap">
         <div className="history-title">나의 쇼핑내역</div>
@@ -25,39 +24,44 @@ const History = () =>{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>2025-01-01</td>
-                        <td>
-                            <div className="history-info-container">
-                                <img 
-                                    src={`${process.env.PUBLIC_URL}/img/perfume_1.png`}
-                                    alt="perfume_1"
-                                    className='history-info-img'
-                                ></img>
-                                <div className="history-info-txtbox">
-                                    <div className="history-info-maintxt">
-                                        엠버 술탄 오드 퍼퓸
+                    {historyData.map((history)=>{
+                        return(
+                            <tr>
+                                <td>{history.orderDate.replace("T", " ").slice(0, 16)}</td>
+                                <td>
+                                    <div className="history-info-container">
+                                        <img 
+                                            src={history?.itemUrl}
+                                            alt={history?.itemName}
+                                            className='history-info-img'
+                                        ></img>
+                                        <div className="history-info-txtbox">
+                                            <div className="history-info-maintxt">
+                                                {history?.itemName??"NaN"}
+                                            </div>
+                                            <div className="history-info-subtxt">
+                                                {history?.itemBrand??"NaN"}
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </td>
+                                <td>{history?.quantity??"NaN"}</td>
+                                <td>{formatCurrency(history?.price??-1)}원</td>
+                                <td>{history?.status}</td>
+                                <td>
+                                    <div className="history-cancel">
+                                        <div
+                                        className="history-cancel-button"
+                                        onClick={()=>onCancel(history?.orderId)}
+                                        >
+                                            취소
+                                        </div>
                                     </div>
-                                    <div className="history-info-subtxt">
-                                        세르주르텐
-                                    </div>
-                                </div>
-                            </div>    
-                        </td>
-                        <td>1</td>
-                        <td>135,000원</td>
-                        <td>배송중</td>
-                        <td>
-                            <div className="history-cancel">
-                                <div
-                                className="history-cancel-button"
-                                onClick={onCancel}
-                                >
-                                    취소
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                                </td>
+                            </tr>
+                        );
+                    })}
+                    
                 </tbody>
             </table>
         </div>
