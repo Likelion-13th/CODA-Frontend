@@ -19,7 +19,7 @@ function App() {
         <ToolBar isLogin={isLogin} onLoginChange={ setIsLogin } />
         <Routes>
           <Route path="/" element={<Home onLoginChange={ setIsLogin }/>} />
-          <Route path="/new" element={<New />} />
+          <Route path="/new" element={<New isLogin={isLogin}/>} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/diffuser" element={<Diffuser isLogin={isLogin} />} />
           <Route path="/perfume" element={<Perfume isLogin={isLogin} />} />
